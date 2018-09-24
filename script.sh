@@ -11,7 +11,7 @@ for i in $(git tag); do
 
 	mkdir -p "${branch}_report"
 
-	mvn org.owasp:dependency-check-maven:3.3.2:check -l -Dmaven.test.skip=true "${branch}_report/mvn_errors.txt"
+	mvn org.owasp:dependency-check-maven:3.3.2:check -l "${branch}_report/mvn_errors.txt" -Dmaven.test.skip=true
 
 
 	mv "${PWD}/target/dependency-check-report.html" "${branch}_report/"
